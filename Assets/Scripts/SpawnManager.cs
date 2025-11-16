@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public List<GameObject> foodPrefabs;
+    public List<GameObject> ballPrefabs;
+    public List<GameObject> cratePrefabs;
     // Start is called before the first frame update
     void Start()
     {

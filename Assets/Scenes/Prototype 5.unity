@@ -1135,7 +1135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859190770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2084,6 +2084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036599460}
+  - component: {fileID: 2036599461}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -2106,6 +2107,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036599461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036599459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be762f29e546dfd498641051d85083f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodPrefabs:
+  - {fileID: 8928336857645753129, guid: dbdffcd8c98d02341b92514469e49493, type: 3}
+  - {fileID: 8811674387316837564, guid: de86b168d5c7f9e48a78d487d1710611, type: 3}
+  - {fileID: 2720807128932358988, guid: 2a1223f0db02c334da77fa7ede651320, type: 3}
+  - {fileID: 1310586246120157042, guid: 5b391cbffd6ee9946baa2f446bc13db3, type: 3}
+  - {fileID: 110732835657335445, guid: bb2818b0cd7b27d4686ea7fae29e4f84, type: 3}
+  ballPrefabs:
+  - {fileID: 4573462084043094694, guid: 46a2e97f88006f949bd4c5bd0426dc19, type: 3}
+  - {fileID: 973474511993136149, guid: 70a98417da177554f87e933567122d23, type: 3}
+  - {fileID: 3411627612928502525, guid: 84dd4ec3bef8359499aa245b998c9343, type: 3}
+  - {fileID: 4473467464209226545, guid: 1c893ff1826af7b45a7beff58580194a, type: 3}
+  - {fileID: 3030653561760021026, guid: fd5d7a56118498d41b980112665fa0fe, type: 3}
+  - {fileID: 4034016692705756877, guid: 42bbf06f44c804c46893267e78279aa4, type: 3}
+  cratePrefabs:
+  - {fileID: 369014493597976736, guid: 548bcb4a87a0ec8499705f6a5dc8a111, type: 3}
+  - {fileID: 4182775780232201131, guid: e5a2d1dba043be84aab93bd7bbf408e2, type: 3}
+  - {fileID: 2449570885829551004, guid: d9d8bc45196ed1f44af0d5225ccf2341, type: 3}
+  - {fileID: 3492093777608014717, guid: 34da2dc07bc1e934aa3be53f9a9ff0e1, type: 3}
+  - {fileID: 893415595661585046, guid: edea3f70e295a144ebcc75451197c45d, type: 3}
 --- !u!1 &2111490033
 GameObject:
   m_ObjectHideFlags: 0
