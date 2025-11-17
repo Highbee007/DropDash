@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
         int foodIndex = Random.Range(0, foodPrefabs.Count);
         int crateIndex = Random.Range(0, cratePrefabs.Count);
 
-        Vector3 spawnPos = new Vector3(Random.Range(-4, 4), 13, 0);
+        Vector3 spawnPos = new Vector3(Random.Range(-2.3f, 2.3f), 13, 0);
 
         Instantiate(cratePrefabs[crateIndex], spawnPos, cratePrefabs[crateIndex].transform.localRotation);
     }
