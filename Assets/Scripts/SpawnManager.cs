@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandom", 0.5f, Random.Range(0.3f, 2.0f));
+        InvokeRepeating("SpawnRandom", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class SpawnManager : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(Random.Range(-4, 4), 13, 0);
 
-        Instantiate(ballPrefabs[ballIndex], spawnPos, ballPrefabs[ballIndex].transform.rotation);
+        Instantiate(cratePrefabs[crateIndex], spawnPos, cratePrefabs[crateIndex].transform.localRotation);
     }
 }
