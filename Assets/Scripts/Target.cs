@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.mass = 0.01f;
+        rb.mass = 0.001f;
     }
 
     private void OnMouseDown()
