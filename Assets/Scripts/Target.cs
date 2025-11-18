@@ -5,6 +5,8 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody rb;
+    public ParticleSystem targetParticle;
+
     // Start is called before the first frame update
     void Start()
     {

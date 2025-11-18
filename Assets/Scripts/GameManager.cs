@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
     public bool isGameActive;
+    public int score;
+    public TextMeshProUGUI scoreText;
+    public AudioClip backgroundAudio;
    
     // Start is called before the first frame update
     void Start()
