@@ -9,10 +9,12 @@ public class Target : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.mass = 0.01f;
     }
 
     private void OnMouseDown()
     {
+        Debug.Log("There was a click");
         Destroy(gameObject);
     }
 

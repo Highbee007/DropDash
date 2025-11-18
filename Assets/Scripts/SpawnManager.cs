@@ -21,7 +21,8 @@ public class SpawnManager : MonoBehaviour
         int crateIndex = Random.Range(0, cratePrefabs.Count);
 
         Vector3 spawnPos = new Vector3(Random.Range(-2.3f, 2.3f), 13, 0);
+        Quaternion spawnRot = new Quaternion(Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178));
 
-        Instantiate(cratePrefabs[crateIndex], spawnPos, cratePrefabs[crateIndex].transform.localRotation);
+        Instantiate(cratePrefabs[crateIndex], spawnPos, spawnRot);
     }
 }
