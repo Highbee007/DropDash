@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
-
         score = 0;
     }
 
