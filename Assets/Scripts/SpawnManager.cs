@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> cratePrefabs;
     private GameManager gameManager;
 
+    private float repeatRateX = 25f;
+    private float repeatRateY = 55f;
 
 
     // Start is called before the first frame update
@@ -19,7 +21,9 @@ public class SpawnManager : MonoBehaviour
     public void SpawnCrate()
     {
         gameManager.StartGame();
-        InvokeRepeating("SpawnRandomCrate", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
+        InvokeRepeating("SpawnRandomCrate", 0.5f, Random.Range(repeatRateX * Time.deltaTime, repeatRateY * Time.deltaTime));
+        repeatRateY -= Time.deltaTime;
+        repeatRateX -= Time.deltaTime;
     }
 
     public void SpawnBall()
