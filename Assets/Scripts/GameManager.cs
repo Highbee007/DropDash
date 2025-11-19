@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public bool isGameActive;
+    //public bool isGameActive;
     public int score;
    
     public void Reset()
@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        isGameActive = true;
+
+        //isGameActive = true;
         score = 0;
     }
 

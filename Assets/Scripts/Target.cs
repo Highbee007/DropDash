@@ -8,23 +8,23 @@ public class Target : MonoBehaviour
 {
     private Rigidbody rb;
     public ParticleSystem targetParticle;
-    private GameManager gameManager; 
     public TextMeshProUGUI scoreText;
+
+    public int score;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     private void OnMouseDown()
     {
         Debug.Log("There was a click");
         Destroy(gameObject);
-        gameManager.score += 5;
-        scoreText.text = ":" + gameManager.score;
+        score += 5;
+        scoreText.text = ":" + score;
 
     }
 

@@ -7,65 +7,75 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
     public List<GameObject> cratePrefabs;
+
+    public GameObject title;
     private GameManager gameManager;
 
-    private float repeatRateX = 25f;
-    private float repeatRateY = 55f;
+    public bool isGameActive = false;
+    public float startDelay = 0.8f;
+    public float spawnInterval = 1.2f;   // starts slow
+    public float minInterval = 0.3f;     // fastest speed
+    public float difficultyRate = 0.95f; // speed multiplier every 10 seconds
 
+    private List<GameObject> currentPrefabs;
 
-    // Start is called before the first frame update
     private void Awake()
     {
+        title = GameObject.Find("Title");
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
-    public void SpawnCrate()
+
+    public void StartFoodMode()
     {
+        StartMode(foodPrefabs);
+    }
+
+    public void StartBallMode()
+    {
+        StartMode(ballPrefabs);
+    }
+
+    public void StartCrateMode()
+    {
+        StartMode(cratePrefabs);
+    }
+
+    private void StartMode(List<GameObject> prefabs)
+    {
+        currentPrefabs = prefabs;
         gameManager.StartGame();
-        InvokeRepeating("SpawnRandomCrate", 0.5f, Random.Range(repeatRateX * Time.deltaTime, repeatRateY * Time.deltaTime));
-        repeatRateY -= Time.deltaTime;
-        repeatRateX -= Time.deltaTime;
+        isGameActive = true;
+        title.SetActive(false);
+
+        StartCoroutine(SpawnLoop());
     }
 
-    public void SpawnBall()
+    IEnumerator SpawnLoop()
     {
-        gameManager.StartGame();
-        InvokeRepeating("SpawnRandomBall", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
+        yield return new WaitForSeconds(startDelay);
+
+        while (isGameActive)
+        {
+            SpawnRandom();
+            yield return new WaitForSeconds(spawnInterval);
+
+            // Difficulty scaling
+            spawnInterval = Mathf.Max(minInterval, spawnInterval * difficultyRate);
+        }
     }
 
-    public void SpawnFood()
+    private void SpawnRandom()
     {
-        gameManager.StartGame();
-        InvokeRepeating("SpawnRandomFood", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
-    }
+        int index = Random.Range(0, currentPrefabs.Count);
 
-    // Update is called once per frame
-    private void SpawnRandomCrate()
-    {
-        int crateIndex = Random.Range(0, cratePrefabs.Count);
+        Vector3 spawnPos = new Vector3(
+            Random.Range(-2.3f, 2.3f),
+            13,
+            0
+        );
 
-        Vector3 spawnPos = new Vector3(Random.Range(-2.3f, 2.3f), 13, 0);
-        Quaternion spawnRot = new Quaternion(Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178));
+        Quaternion spawnRot = Random.rotation;
 
-        Instantiate(cratePrefabs[crateIndex], spawnPos, spawnRot);
-    }
-
-    private void SpawnRandomBall()
-    {
-        int ballIndex = Random.Range(0, ballPrefabs.Count);
-
-        Vector3 spawnPos = new Vector3(Random.Range(-2.3f, 2.3f), 13, 0);
-        Quaternion spawnRot = new Quaternion(Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178));
-
-        Instantiate(ballPrefabs[ballIndex], spawnPos, spawnRot);
-    }
-
-    private void SpawnRandomFood()
-    {
-        int foodIndex = Random.Range(0, foodPrefabs.Count);
-
-        Vector3 spawnPos = new Vector3(Random.Range(-2.3f, 2.3f), 13, 0);
-        Quaternion spawnRot = new Quaternion(Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178), Random.Range(0, 178));
-
-        Instantiate(foodPrefabs[foodIndex], spawnPos, spawnRot);
+        Instantiate(currentPrefabs[index], spawnPos, spawnRot);
     }
 }
