@@ -97,7 +97,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetParticle: {fileID: 7188656462439650259}
 --- !u!65 &1574577311662686953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -224,5 +225,10 @@ PrefabInstance:
 --- !u!4 &4497329648586492567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8200167745370514921, guid: 307229a5540374aae98859caad2128a3, type: 3}
+  m_PrefabInstance: {fileID: 5739099278282354558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7188656462439650259 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3, type: 3}
   m_PrefabInstance: {fileID: 5739099278282354558}
   m_PrefabAsset: {fileID: 0}

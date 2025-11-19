@@ -16,19 +16,19 @@ public class SpawnManager : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
-    void SpawnCrate()
+    public void SpawnCrate()
     {
         gameManager.StartGame();
         InvokeRepeating("SpawnRandomCrate", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
     }
 
-    void SpawnBall()
+    public void SpawnBall()
     {
         gameManager.StartGame();
         InvokeRepeating("SpawnRandomBall", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));
     }
 
-    void SpawnFood()
+    public void SpawnFood()
     {
         gameManager.StartGame();
         InvokeRepeating("SpawnRandomFood", 0.5f, Random.Range(20f * Time.deltaTime, 50f * Time.deltaTime));

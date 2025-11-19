@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
+        score = 0;
+        scoreText.text = ":" + score;
     }
 
     public void Mode()
