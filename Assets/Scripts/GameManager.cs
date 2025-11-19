@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 
     public bool isGameActive;
     public int score;
-    public TextMeshProUGUI scoreText;
-    public AudioClip backgroundAudio;
    
     public void Reset()
     {
@@ -19,8 +17,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
+
         score = 0;
-        scoreText.text = ":" + score;
     }
 
     public void Mode()
