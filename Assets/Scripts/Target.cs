@@ -13,7 +13,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.mass = 0.001f;
+        rb.mass = 0.1f;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
