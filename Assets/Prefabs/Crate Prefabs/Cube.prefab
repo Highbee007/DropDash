@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3350678855909676348}
   - component: {fileID: 6220348591267778710}
   m_Layer: 0
-  m_Name: Synty_Cube_01
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

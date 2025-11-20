@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public List<GameObject> foodPrefabs;
-    public List<GameObject> ballPrefabs;
-    public List<GameObject> cratePrefabs;
 
     public GameObject title;
     private GameManager gameManager;
 
-    public bool isGameActive = false;
-    public float startDelay = 0.8f;
-    public float spawnInterval = 1.2f;   // starts slow
-    public float minInterval = 0.3f;     // fastest speed
-    public float difficultyRate = 0.95f; // speed multiplier every 10 seconds
+    private float startDelay = 0.8f;
+    private float spawnInterval = 1.2f;
+    private float minInterval = 0.3f; 
+    private float difficultyRate = 0.6f;
 
     private List<GameObject> currentPrefabs;
 
@@ -25,41 +21,25 @@ public class SpawnManager : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-    public void StartFoodMode()
-    {
-        StartMode(foodPrefabs);
-    }
 
-    public void StartBallMode()
-    {
-        StartMode(ballPrefabs);
-    }
-
-    public void StartCrateMode()
-    {
-        StartMode(cratePrefabs);
-    }
-
-    private void StartMode(List<GameObject> prefabs)
+    public void StartMode(List<GameObject> prefabs)
     {
         currentPrefabs = prefabs;
         gameManager.StartGame();
-        isGameActive = true;
         title.SetActive(false);
-
-        StartCoroutine(SpawnLoop());
+        StartCoroutine(Spawn());
     }
 
-    IEnumerator SpawnLoop()
+    IEnumerator Spawn()
     {
         yield return new WaitForSeconds(startDelay);
 
-        while (isGameActive)
+        while (gameManager.isGameActive)
         {
             SpawnRandom();
             yield return new WaitForSeconds(spawnInterval);
 
-            // Difficulty scaling
+            // Difficulty
             spawnInterval = Mathf.Max(minInterval, spawnInterval * difficultyRate);
         }
     }
