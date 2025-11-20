@@ -299,13 +299,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036599461}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
-        m_MethodName: StartBallMode
+      - m_Target: {fileID: 11500000, guid: 1db663a84b5c6024a9df13572c57685f, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -527,8 +527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db663a84b5c6024a9df13572c57685f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameActive: 0
-  score: 0
   scoreText: {fileID: 979252328}
   foodPrefabs:
   - {fileID: 8928336857645753129, guid: dbdffcd8c98d02341b92514469e49493, type: 3}
@@ -549,6 +547,8 @@ MonoBehaviour:
   - {fileID: 893415595661585046, guid: edea3f70e295a144ebcc75451197c45d, type: 3}
   - {fileID: 3492093777608014717, guid: 34da2dc07bc1e934aa3be53f9a9ff0e1, type: 3}
   - {fileID: 4182775780232201131, guid: e5a2d1dba043be84aab93bd7bbf408e2, type: 3}
+  isGameActive: 0
+  score: 0
 --- !u!1 &494445611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,13 +1225,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036599461}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
-        m_MethodName: StartCrateMode
+      - m_Target: {fileID: 11500000, guid: 1db663a84b5c6024a9df13572c57685f, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2243,13 +2243,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036599461}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
-        m_MethodName: StartFoodMode
+      - m_Target: {fileID: 11500000, guid: 1db663a84b5c6024a9df13572c57685f, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2338,10 +2338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 859190769}
-  startDelay: 0.8
-  spawnInterval: 1.2
-  minInterval: 0.3
-  difficultyRate: 0.95
 --- !u!1 &2111490033
 GameObject:
   m_ObjectHideFlags: 0
