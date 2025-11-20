@@ -21,14 +21,17 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        gameManager.score += 5;
-        gameManager.scoreText.text = ":" + gameManager.score;
+        while (gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            gameManager.score += 5;
+            gameManager.scoreText.text = ":" + gameManager.score;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
