@@ -6,7 +6,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    private AudioSource playAudio;
+    //public AudioClip gameAudio;
     private SpawnManager spawn;
+    public GameObject cameraAudio;
 
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
@@ -19,8 +22,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //backgroundAudio = GetComponent<AudioSource>();
+        playAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
+        cameraAudio = GetComponent<GameObject>();
     }
 
     public void StartFoodMode()
@@ -46,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         isGameActive = true;
+        //playAudio.PlayOneShot(gameAudio, 1f);
         score = 0;
         scoreText.text = ":" + score;
     }

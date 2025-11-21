@@ -39,7 +39,6 @@ public class SpawnManager : MonoBehaviour
             SpawnRandom();
             yield return new WaitForSeconds(spawnInterval);
 
-            // Difficulty
             spawnInterval = Mathf.Max(minInterval, spawnInterval * difficultyRate);
         }
     }
