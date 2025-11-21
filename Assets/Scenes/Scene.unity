@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 979252328}
-  cameraAudio: {fileID: 534669902}
+  playAudio: {fileID: 534669906}
   foodPrefabs:
   - {fileID: 8928336857645753129, guid: dbdffcd8c98d02341b92514469e49493, type: 3}
   - {fileID: 8811674387316837564, guid: de86b168d5c7f9e48a78d487d1710611, type: 3}
