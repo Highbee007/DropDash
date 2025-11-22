@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.41, y: 6.15, z: 1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8380508882062082623}
@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetParticle: {fileID: 3019392962070944635}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  count: 0
 --- !u!135 &-7840836622989502301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -170,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3835200575829384923, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.33
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 3835200575829384923, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
       propertyPath: m_LocalPosition.y
@@ -178,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3835200575829384923, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.32
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: 3835200575829384923, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
       propertyPath: m_LocalRotation.w

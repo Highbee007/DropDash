@@ -48,7 +48,7 @@ public class SpawnManager : MonoBehaviour
         int index = Random.Range(0, currentPrefabs.Count);
 
         Vector3 spawnPos = new Vector3(
-            Random.Range(-2.3f, 2.3f),
+            Random.Range(-2.1f, 2.1f),
             13,
             0
         );

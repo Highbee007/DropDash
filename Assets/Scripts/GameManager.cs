@@ -6,8 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public AudioSource playAudio;
-    public AudioSource sfxAudio;
+    private AudioSource playAudio;
     //public AudioClip gameAudio;
     private SpawnManager spawn;
 

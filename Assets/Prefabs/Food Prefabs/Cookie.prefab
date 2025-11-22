@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetParticle: {fileID: 4677010509386475066}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  count: 0
 --- !u!65 &5526769954335889310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,15 +165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.49999988
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.49999988
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,11 +181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03359568
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.031432636
+      value: 0.031
       objectReference: {fileID: 0}
     - target: {fileID: 9209604266781961644, guid: ec46c8c4a3cbc429382ee48bd9169b45, type: 3}
       propertyPath: m_LocalRotation.w

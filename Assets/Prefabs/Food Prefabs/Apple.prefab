@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetParticle: {fileID: 8973827517047259584}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  count: 0
 --- !u!65 &-1711377127706305596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -170,15 +173,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4103237346511452878, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16349792
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 4103237346511452878, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1267314
+      value: 0.165
       objectReference: {fileID: 0}
     - target: {fileID: 4103237346511452878, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.037032545
+      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 4103237346511452878, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
       propertyPath: m_LocalRotation.w
