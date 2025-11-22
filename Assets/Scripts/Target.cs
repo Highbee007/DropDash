@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using TMPro;
-using UnityEngine.UI;
 
 public class Target : MonoBehaviour
 {
@@ -34,9 +31,11 @@ public class Target : MonoBehaviour
         if (!gameManager.isGameActive)
             return;
 
-        targetParticle.Play();
-        sfxAudio.PlayOneShot(tapSound, 1.0f);
         Destroy(gameObject);
+        targetParticle.Play();
+
+        //sfxAudio.PlayOneShot(tapSound, 2.0f);
+
         gameManager.AddScore(5);
 
     }

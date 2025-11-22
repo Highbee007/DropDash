@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.28, y: 6.01, z: 1}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5401928577368180453}
@@ -129,7 +129,6 @@ MonoBehaviour:
   targetParticle: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
   tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
   bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  count: 0
 --- !u!65 &7278600470202570155
 BoxCollider:
   m_ObjectHideFlags: 0
