@@ -16,7 +16,6 @@ public class Target : MonoBehaviour
     public AudioClip tapSound;
     public AudioClip bombSound;
 
-    public int count;
 
 
     // Start is called before the first frame update
@@ -34,11 +33,10 @@ public class Target : MonoBehaviour
     {
         if (gameManager.isGameActive)
         {
-            Destroy(gameObject);
-            targetParticle.Play();
+            Instantiate(targetParticle, transform.position, targetParticle.transform.rotation);
             sfxAudio.PlayOneShot(tapSound, 1.0f);
-            gameManager.score += 5;
-            gameManager.scoreText.text = ":" + gameManager.score;
+            gameManager.AddScore(5);
+            Destroy(gameObject);
         }
     }
 

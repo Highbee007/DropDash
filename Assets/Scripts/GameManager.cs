@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         playAudio.Play();
         score = 0;
+    }
+
+    public void AddScore(int point)
+    {
+        score += point;
         scoreText.text = ":" + score;
     }
 
