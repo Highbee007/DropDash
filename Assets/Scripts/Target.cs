@@ -31,13 +31,14 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.isGameActive)
-        {
-            Instantiate(targetParticle, transform.position, targetParticle.transform.rotation);
-            sfxAudio.PlayOneShot(tapSound, 1.0f);
-            gameManager.AddScore(5);
-            Destroy(gameObject);
-        }
+        if (!gameManager.isGameActive)
+            return;
+
+        targetParticle.Play();
+        sfxAudio.PlayOneShot(tapSound, 1.0f);
+        Destroy(gameObject);
+        gameManager.AddScore(5);
+
     }
 
 
