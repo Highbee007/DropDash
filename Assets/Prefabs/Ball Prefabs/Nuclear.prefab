@@ -126,10 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetParticle: {fileID: 7118674349918111419}
+  targetParticle: {fileID: 5835976198770281062}
   tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
   bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  count: 0
 --- !u!135 &2063493682936124523
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -229,8 +228,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 448066733634568798, guid: 70a1428e5f80a4866a779ef1ab9fe521, type: 3}
   m_PrefabInstance: {fileID: 4131985866046578081}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &7118674349918111419 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6601538019107920666, guid: 70a1428e5f80a4866a779ef1ab9fe521, type: 3}
+--- !u!1 &5835976198770281062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7613984081511077831, guid: 70a1428e5f80a4866a779ef1ab9fe521, type: 3}
   m_PrefabInstance: {fileID: 4131985866046578081}
   m_PrefabAsset: {fileID: 0}

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     private AudioSource playAudio;
-    //public AudioClip gameAudio;
+    public AudioSource sfxAudio;
     private SpawnManager spawn;
 
     public List<GameObject> foodPrefabs;
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        sfxAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 

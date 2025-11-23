@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetParticle: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
+  targetParticle: {fileID: 1683507196929990561}
   tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
   bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
 --- !u!65 &7278600470202570155
@@ -219,6 +219,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
+--- !u!198 &1683507196929990561 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
+  m_PrefabInstance: {fileID: 8216291729568021547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5401928577368180453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4103237346511452878, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
