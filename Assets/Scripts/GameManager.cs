@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI livesText;
     private AudioSource playAudio;
     public AudioSource sfxAudio;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public bool isGameActive;
     public int score;
+    private int best;
     private int lives = 5;
 
 
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
         gameOver = GetComponent<GameObject>();
 
         livesText.text = "Lives: " + lives;
+        best = PlayerPrefs.GetInt("Highscore");
+
     }
 
     public void StartFoodMode()
@@ -64,6 +68,13 @@ public class GameManager : MonoBehaviour
     {
         score += point;
         scoreText.text = ":" + score;
+        
+
+        if (score > best)
+        {
+            best = score;
+            PlayerPrefs.SetInt("Highscore", best);
+        }
     }
 
     public void ReduceLives(int life)
