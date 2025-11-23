@@ -31,9 +31,9 @@ public class Target : MonoBehaviour
         if (!gameManager.isGameActive)
             return;
 
-        Destroy(gameObject);
         gameManager.AddScore(5);
         Explode();
+        Destroy(gameObject);
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
 
@@ -44,7 +44,7 @@ public class Target : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         // Adjusting fall speed
         if (gameManager.isGameActive)
