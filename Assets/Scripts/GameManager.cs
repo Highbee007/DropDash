@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private AudioSource playAudio;
     public AudioSource sfxAudio;
     private SpawnManager spawn;
+    public GameObject gameOver;
 
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         sfxAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
+        gameOver = GetComponent<GameObject>();
     }
 
     public void StartFoodMode()
@@ -59,8 +61,9 @@ public class GameManager : MonoBehaviour
         scoreText.text = ":" + score;
     }
 
-    public void Mode()
+    public void GameOver()
     {
+        isGameActive = false;
 
     }
 
