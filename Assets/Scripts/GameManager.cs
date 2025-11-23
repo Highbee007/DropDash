@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         score += point;
         scoreText.text = ":" + score;
-        
+        bestScoreText.text = "Highest Score: " + best;
 
         if (score > best)
         {
