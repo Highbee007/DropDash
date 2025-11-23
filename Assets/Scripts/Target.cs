@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     public ParticleSystem targetParticle;
     private GameManager gameManager;
 

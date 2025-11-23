@@ -26,6 +26,9 @@ public class SpawnManager : MonoBehaviour
 
     public void StartMode(List<GameObject> prefabs)
     {
+        if (!gameManager.isGameActive)
+            return;
+
         currentPrefabs = prefabs;
         gameManager.StartGame();
         title.SetActive(false);

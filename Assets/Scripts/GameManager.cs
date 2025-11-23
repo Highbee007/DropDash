@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     private AudioSource playAudio;
     public AudioSource sfxAudio;
-    private SpawnManager spawn;
     public GameObject gameOver;
+
+    private SpawnManager spawn;
+    private Target target;
 
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
         sfxAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         gameOver = GetComponent<GameObject>();
+
+        livesText.text = "Lives: " + lives;
     }
 
     public void StartFoodMode()
@@ -54,7 +58,6 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         playAudio.Play();
-        score = 0;
     }
 
     public void AddScore(int point)
@@ -63,11 +66,24 @@ public class GameManager : MonoBehaviour
         scoreText.text = ":" + score;
     }
 
+    public void ReduceLives(int life)
+    {
+        lives -= 1;
+    }
+
     public void GameOver()
     {
         isGameActive = false;
         gameOver.SetActive(true);
+        target.rb.useGravity = false;
+    }
 
+    private void Update()
+    {
+        if (lives < 1)
+        {
+            GameOver();
+        }
     }
 
 }
