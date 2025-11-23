@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI livesText;
     private AudioSource playAudio;
     public AudioSource sfxAudio;
     private SpawnManager spawn;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public bool isGameActive;
     public int score;
+    private int lives = 5;
 
 
 
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
+        gameOver.SetActive(true);
 
     }
 
