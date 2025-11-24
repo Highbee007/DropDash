@@ -672,6 +672,7 @@ MonoBehaviour:
   - {fileID: 1310586246120157042, guid: 5b391cbffd6ee9946baa2f446bc13db3, type: 3}
   - {fileID: 2720807128932358988, guid: 2a1223f0db02c334da77fa7ede651320, type: 3}
   - {fileID: 110732835657335445, guid: bb2818b0cd7b27d4686ea7fae29e4f84, type: 3}
+  - {fileID: 3831524658807131471, guid: 9bd5a1411e574b74c8e4999248fd46ee, type: 3}
   ballPrefabs:
   - {fileID: 4034016692705756877, guid: 42bbf06f44c804c46893267e78279aa4, type: 3}
   - {fileID: 3030653561760021026, guid: fd5d7a56118498d41b980112665fa0fe, type: 3}
@@ -679,12 +680,14 @@ MonoBehaviour:
   - {fileID: 973474511993136149, guid: 70a98417da177554f87e933567122d23, type: 3}
   - {fileID: 4573462084043094694, guid: 46a2e97f88006f949bd4c5bd0426dc19, type: 3}
   - {fileID: 4473467464209226545, guid: 1c893ff1826af7b45a7beff58580194a, type: 3}
+  - {fileID: 4857582085496828238, guid: 8bc12cd8560012b4a9105ba4ed289a72, type: 3}
   cratePrefabs:
   - {fileID: 369014493597976736, guid: 548bcb4a87a0ec8499705f6a5dc8a111, type: 3}
   - {fileID: 2449570885829551004, guid: d9d8bc45196ed1f44af0d5225ccf2341, type: 3}
   - {fileID: 893415595661585046, guid: edea3f70e295a144ebcc75451197c45d, type: 3}
   - {fileID: 3492093777608014717, guid: 34da2dc07bc1e934aa3be53f9a9ff0e1, type: 3}
   - {fileID: 4182775780232201131, guid: e5a2d1dba043be84aab93bd7bbf408e2, type: 3}
+  - {fileID: 6143144159320926588, guid: 63586ae1ad9c9794986f76eb5750826b, type: 3}
   isGameActive: 0
   score: 0
 --- !u!1 &494445611
@@ -2648,7 +2651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 859190769}
-  gameManager: {fileID: 404540074}
   specialPrefabs:
   - {fileID: 3025469145690306734, guid: 291cc8cb4e3818841990be147fd9b740, type: 3}
   - {fileID: 133374701982189102, guid: d17bcb3b06638f547a5e208dc2c38f8c, type: 3}
