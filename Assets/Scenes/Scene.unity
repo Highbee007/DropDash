@@ -663,7 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 979252328}
   bestScoreText: {fileID: 525480504}
-  livesText: {fileID: 0}
+  livesText: {fileID: 291046497}
   sfxAudio: {fileID: 0}
   gameOver: {fileID: 1908381698}
   foodPrefabs:
@@ -2648,6 +2648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 859190769}
+  gameManager: {fileID: 404540074}
   specialPrefabs:
   - {fileID: 3025469145690306734, guid: 291cc8cb4e3818841990be147fd9b740, type: 3}
   - {fileID: 133374701982189102, guid: d17bcb3b06638f547a5e208dc2c38f8c, type: 3}

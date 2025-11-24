@@ -31,9 +31,9 @@ public class Target : MonoBehaviour
         if (!gameManager.isGameActive)
             return;
 
+        Destroy(gameObject);
         gameManager.AddScore(5);
         Explode();
-        Destroy(gameObject);
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
 

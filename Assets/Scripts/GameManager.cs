@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public int score;
     private int best;
-    private int lives = 5;
-
+    private int lives;
 
 
     private void Awake()
@@ -32,9 +31,11 @@ public class GameManager : MonoBehaviour
         sfxAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         gameOver = GetComponent<GameObject>();
+        lives = 5;
+        Debug.Log(lives);
 
         livesText.text = "Lives: " + lives;
-        best = PlayerPrefs.GetInt("Highscore");
+        best = PlayerPrefs.GetInt("HighestScore");
 
     }
 
@@ -55,13 +56,14 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-        
+
     }
 
     public void StartGame()
     {
         isGameActive = true;
         playAudio.Play();
+        Debug.Log("Game Started");
     }
 
     public void AddScore(int point)
@@ -73,13 +75,13 @@ public class GameManager : MonoBehaviour
         if (score > best)
         {
             best = score;
-            PlayerPrefs.SetInt("Highscore", best);
+            PlayerPrefs.SetInt("HighestScore", best);
         }
     }
 
     public void ReduceLives(int life)
     {
-        lives -= 1;
+        lives -= life;
     }
 
     public void GameOver()
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
     {
         if (lives < 1)
         {
+            Debug.Log(lives);
             GameOver();
         }
     }
