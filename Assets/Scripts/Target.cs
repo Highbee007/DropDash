@@ -15,7 +15,6 @@ public class Target : MonoBehaviour
     private float growth = 0.7f;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +33,7 @@ public class Target : MonoBehaviour
             gameManager.AddScore(5);
             Explode();
 
-        }else if (gameObject.CompareTag("Bad") && gameManager.isGameActive)
+        }else if (gameObject.CompareTag("Bad"))
         {
             Destroy(gameObject);
             gameManager.ReduceLives(1);
@@ -49,6 +48,7 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        gameManager.ReduceLives(1);
 
     }
 

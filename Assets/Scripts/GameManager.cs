@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI livesText;
     private AudioSource playAudio;
-    public AudioSource sfxAudio;
     public GameObject gameOver;
 
     private SpawnManager spawn;
@@ -28,13 +27,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
-        sfxAudio = GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         gameOver = GetComponent<GameObject>();
+
         lives = 5;
         Debug.Log(lives);
 
-        livesText.text = "Lives: " + lives;
         best = PlayerPrefs.GetInt("HighestScore");
 
     }
@@ -56,7 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-
+        gameOver.SetActive(false);
+        spawn.title.SetActive(true);
     }
 
     public void StartGame()
@@ -72,6 +71,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = ":" + score;
         bestScoreText.text = "Highest Score: " + best;
 
+
         if (score > best)
         {
             best = score;
@@ -82,6 +82,8 @@ public class GameManager : MonoBehaviour
     public void ReduceLives(int life)
     {
         lives -= life;
+        livesText.text = "Lives: " + lives;
+
     }
 
     public void GameOver()

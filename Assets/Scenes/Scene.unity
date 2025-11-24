@@ -664,7 +664,6 @@ MonoBehaviour:
   scoreText: {fileID: 979252328}
   bestScoreText: {fileID: 525480504}
   livesText: {fileID: 291046497}
-  sfxAudio: {fileID: 0}
   gameOver: {fileID: 1908381698}
   foodPrefabs:
   - {fileID: 8928336857645753129, guid: dbdffcd8c98d02341b92514469e49493, type: 3}
@@ -1940,7 +1939,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1438875238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 404540074}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438875238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,8 +2608,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2123222630}
-  - {fileID: 1438875236}
   - {fileID: 525480503}
+  - {fileID: 1438875236}
   m_Father: {fileID: 500737218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2653,7 +2664,6 @@ MonoBehaviour:
   title: {fileID: 859190769}
   specialPrefabs:
   - {fileID: 3025469145690306734, guid: 291cc8cb4e3818841990be147fd9b740, type: 3}
-  - {fileID: 133374701982189102, guid: d17bcb3b06638f547a5e208dc2c38f8c, type: 3}
 --- !u!1 &2111490033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,7 +2744,7 @@ GameObject:
   - component: {fileID: 2123222632}
   - component: {fileID: 2123222631}
   m_Layer: 5
-  m_Name: Game Over
+  m_Name: Game Over Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
