@@ -34,6 +34,15 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         gameManager.AddScore(5);
         Explode();
+
+        if (gameObject.CompareTag("Bad"))
+        {
+            gameManager.ReduceLives(1);
+            gameManager.AddScore(-10);
+            Destroy(gameObject);
+            Explode();
+            Debug.Log("Bad was clicked!");
+        }
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
 
