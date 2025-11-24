@@ -28,18 +28,17 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!gameManager.isGameActive)
-            return;
-
-        Destroy(gameObject);
-        gameManager.AddScore(5);
-        Explode();
-
-        if (gameObject.CompareTag("Bad"))
+        if (gameManager.isGameActive)
         {
+            Destroy(gameObject);
+            gameManager.AddScore(5);
+            Explode();
+
+        }else if (gameObject.CompareTag("Bad") && gameManager.isGameActive)
+        {
+            Destroy(gameObject);
             gameManager.ReduceLives(1);
             gameManager.AddScore(-10);
-            Destroy(gameObject);
             Explode();
             Debug.Log("Bad was clicked!");
         }
