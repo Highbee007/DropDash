@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject gameOver;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI livesText;
+    public GameObject bestText;
+    public Button playAgainButton;
     private AudioSource playAudio;
-    public GameObject gameOver;
 
     private SpawnManager spawn;
     private Target target;
@@ -28,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
-        gameOver = GetComponent<GameObject>();
+        Debug.Log(gameOver);
 
         lives = 5;
         Debug.Log(lives);
@@ -54,15 +58,16 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-        gameOver.SetActive(false);
         spawn.title.SetActive(true);
+        gameOver.SetActive(false);
+        bestText.SetActive(false);
+        playAgainButton.GameObject().SetActive(false);
     }
 
     public void StartGame()
     {
         isGameActive = true;
         playAudio.Play();
-        Debug.Log("Game Started");
     }
 
     public void AddScore(int point)
@@ -90,7 +95,8 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = false;
         gameOver.SetActive(true);
-        target.rb.useGravity = false;
+        bestText.SetActive(true);
+        playAgainButton.GameObject().SetActive(true);
     }
 
     private void Update()

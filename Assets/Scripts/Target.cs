@@ -23,6 +23,11 @@ public class Target : MonoBehaviour
 
         rb.drag = 0.7f;
 
+        if (gameManager.isGameActive)
+        {
+            rb.useGravity = true;
+        }
+
     }
 
     private void OnMouseDown()
@@ -33,13 +38,6 @@ public class Target : MonoBehaviour
             gameManager.AddScore(5);
             Explode();
 
-        }else if (gameObject.CompareTag("Bad"))
-        {
-            Destroy(gameObject);
-            gameManager.ReduceLives(1);
-            gameManager.AddScore(-10);
-            Explode();
-            Debug.Log("Bad was clicked!");
         }
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
