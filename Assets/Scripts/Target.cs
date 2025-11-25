@@ -32,12 +32,15 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.isGameActive)
-        {
-            Destroy(gameObject);
-            gameManager.AddScore(5);
-            Explode();
+        if (!gameManager.isGameActive)
+            return;
+        Destroy(gameObject);
+        gameManager.AddScore(5);
+        Explode();
 
+        if (gameObject.CompareTag("Bad"))
+        {
+            gameManager.ReduceLives(1);
         }
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
