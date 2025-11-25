@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
 
     private float startDelay = 0.8f;
     private float spawnInterval = 2.0f;
-    private float minInterval = 0.5f; 
+    private float minInterval = 0.5f;
     private float difficultyRate = 0.95f;
 
     private List<GameObject> currentPrefabs;
@@ -27,12 +27,12 @@ public class SpawnManager : MonoBehaviour
     public void StartMode(List<GameObject> prefabs)
     {
         if (!gameManager.isGameActive)
-            return;
-
-        currentPrefabs = prefabs;
-        gameManager.StartGame();
-        title.SetActive(false);
-        StartCoroutine(Spawn());
+        {
+            currentPrefabs = prefabs;
+            gameManager.StartGame();
+            title.SetActive(false);
+            StartCoroutine(Spawn());
+        }
     }
 
     IEnumerator Spawn()

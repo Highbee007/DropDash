@@ -26,6 +26,9 @@ public class Target : MonoBehaviour
         if (gameManager.isGameActive)
         {
             rb.useGravity = true;
+        } else
+        {
+            rb.useGravity = false;
         }
 
     }
@@ -41,6 +44,7 @@ public class Target : MonoBehaviour
         if (gameObject.CompareTag("Bad"))
         {
             gameManager.ReduceLives(1);
+            gameManager.AddScore(-15);
         }
         //gameManager.sfxAudio.PlayOneShot(tapSound);
     }
@@ -53,15 +57,15 @@ public class Target : MonoBehaviour
 
     }
 
-    private void LateUpdate()
-    {
-        // Adjusting fall speed
-        if (gameManager.isGameActive)
-        {
-            force += growth * Time.deltaTime;
-            rb.AddForce(Vector3.down * force, ForceMode.Acceleration);
-        }
-    }
+    //private void LateUpdate()
+    //{
+    //    // Adjusting fall speed
+    //    if (gameManager.isGameActive)
+    //    {
+    //        force += growth * Time.deltaTime;
+    //        rb.AddForce(Vector3.down * force, ForceMode.Acceleration);
+    //    }
+    //}
 
     void Explode()
     {

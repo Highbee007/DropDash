@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public int score;
     private int best;
-    private int lives;
+    private int lives = 5;
 
 
     private void Start()
