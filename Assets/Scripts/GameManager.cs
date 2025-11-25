@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour
     {
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
-        Debug.Log(gameOver);
-
-        lives = 5;
-        Debug.Log(lives);
-
         best = PlayerPrefs.GetInt("HighestScore");
+
+        livesText.text = "Lives: " + lives;
+        bestScoreText.text = "Highest Score: " + best;
+        scoreText.text = ":" + score;
+
 
     }
 
@@ -58,10 +58,18 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        lives = 5;
+        livesText.text = "Lives: " + lives;
+
+        score = 0;
+        scoreText.text = ":" + score;
+
         spawn.title.SetActive(true);
         gameOver.SetActive(false);
         bestText.SetActive(false);
-        playAgainButton.GameObject().SetActive(false);
+        playAgainButton.gameObject.SetActive(false);
+
+        isGameActive = false;
     }
 
     public void StartGame()
