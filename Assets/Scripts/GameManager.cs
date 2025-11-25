@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int lives;
 
 
-    private void Awake()
+    private void Start()
     {
         playAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
