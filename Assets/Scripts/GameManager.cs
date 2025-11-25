@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
         lives -= life;
         livesText.text = "Lives: " + lives;
 
+        if (lives == 0)
+            return;
     }
 
     public void GameOver()
@@ -109,9 +111,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lives < 1)
+        if (lives < 1 && isGameActive)
         {
-            Debug.Log(lives);
             GameOver();
         }
     }
