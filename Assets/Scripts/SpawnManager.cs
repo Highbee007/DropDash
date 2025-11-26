@@ -8,10 +8,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject title;
     private GameManager gameManager;
 
-    private float startDelay = 0.8f;
-    private float spawnInterval = 2.0f;
-    private float minInterval = 0.5f;
-    private float difficultyRate = 0.95f;
+    public float startDelay = 0.8f;
+    public float spawnInterval = 2.0f;
+    public float minInterval = 0.5f;
+    public float difficultyRate = 0.95f;
 
     private List<GameObject> currentPrefabs;
 

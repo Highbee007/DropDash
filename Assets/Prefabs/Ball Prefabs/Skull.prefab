@@ -99,9 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -2207335850627387069}
-  targetParticle: {fileID: 4758139293545943008, guid: c7ad2532a6eeb40b59033c75e71fa054, type: 3}
+  targetParticle: {fileID: 19821056, guid: 079954accd64b32419ec069129c81273, type: 3}
   tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
   bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  force: 2
+  growth: 0.7
 --- !u!54 &-2207335850627387069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

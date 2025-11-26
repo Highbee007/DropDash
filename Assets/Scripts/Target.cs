@@ -11,8 +11,8 @@ public class Target : MonoBehaviour
     public AudioClip tapSound;
     public AudioClip bombSound;
 
-    private float force = 2f;
-    private float growth = 0.7f;
+    public float force = 2f;
+    public float growth = 0.7f;
 
 
     // Start is called before the first frame update
@@ -22,14 +22,6 @@ public class Target : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         rb.drag = 0.7f;
-
-        if (gameManager.isGameActive)
-        {
-            rb.useGravity = true;
-        } else
-        {
-            rb.useGravity = false;
-        }
 
     }
 
@@ -52,20 +44,31 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        gameManager.ReduceLives(1);
+        if (!gameObject.CompareTag("Bad"))
+        {
+            Destroy(gameObject);
+            gameManager.ReduceLives(1);
+        } else
+        {
+            Destroy(gameObject);
+        }
 
     }
 
-    //private void LateUpdate()
-    //{
-    //    // Adjusting fall speed
-    //    if (gameManager.isGameActive)
-    //    {
-    //        force += growth * Time.deltaTime;
-    //        rb.AddForce(Vector3.down * force, ForceMode.Acceleration);
-    //    }
-    //}
+    private void LateUpdate()
+    {
+        // Adjusting fall speed
+        if (gameManager.isGameActive)
+        {
+            force += growth * Time.deltaTime;
+            rb.AddForce(Vector3.down * force, ForceMode.Acceleration);
+        }
+
+        if (!gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Explode()
     {

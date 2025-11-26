@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOver;
+    //public GameObject gameOver;
+    //public GameObject bestText;
+    public GameObject gameOverObject;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI livesText;
-    public GameObject bestText;
+    public TextMeshProUGUI yourScoreText;
     public Button playAgainButton;
     private AudioSource playAudio;
 
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public int score;
     private int best;
-    private int lives = 5;
+    private int lives;
 
 
     private void Start()
@@ -34,9 +36,12 @@ public class GameManager : MonoBehaviour
         spawn = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         best = PlayerPrefs.GetInt("HighestScore");
 
+        lives = 5;
+
         livesText.text = "Lives: " + lives;
         bestScoreText.text = "Highest Score: " + best;
         scoreText.text = ":" + score;
+        yourScoreText.text = "Your Score: " + score;
 
 
     }
@@ -65,11 +70,20 @@ public class GameManager : MonoBehaviour
         scoreText.text = ":" + score;
 
         spawn.title.SetActive(true);
-        gameOver.SetActive(false);
-        bestText.SetActive(false);
+        //gameOver.SetActive(false);
+        //bestText.SetActive(false);
+        gameOverObject.SetActive(false);
         playAgainButton.gameObject.SetActive(false);
 
         isGameActive = false;
+
+        spawn.spawnInterval = 2.0f;
+        spawn.startDelay = 0.8f;
+        spawn.minInterval = 0.5f;
+        spawn.difficultyRate = 0.95f;
+
+        //target.force = 2f;
+        //target.force = 0.7f;
     }
 
     public void StartGame()
@@ -82,6 +96,7 @@ public class GameManager : MonoBehaviour
     {
         score += point;
         scoreText.text = ":" + score;
+        yourScoreText.text = "Your Score: " + score;
         bestScoreText.text = "Highest Score: " + best;
 
 
@@ -104,8 +119,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        gameOver.SetActive(true);
-        bestText.SetActive(true);
+        //gameOver.SetActive(true);
+        //bestText.SetActive(true);
+        gameOverObject.SetActive(true);
         playAgainButton.GameObject().SetActive(true);
     }
 
