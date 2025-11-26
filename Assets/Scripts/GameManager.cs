@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     private AudioSource playAudio;
 
     private SpawnManager spawn;
-    private Target target;
 
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
@@ -40,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         livesText.text = "Lives: " + lives;
         bestScoreText.text = "Highest Score: " + best;
-        scoreText.text = ":" + score;
+        scoreText.text = "Score: " + score;
         yourScoreText.text = "Your Score: " + score;
 
 
@@ -67,7 +66,7 @@ public class GameManager : MonoBehaviour
         livesText.text = "Lives: " + lives;
 
         score = 0;
-        scoreText.text = ":" + score;
+        scoreText.text = "Score: " + score;
 
         spawn.title.SetActive(true);
         //gameOver.SetActive(false);
@@ -95,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int point)
     {
         score += point;
-        scoreText.text = ":" + score;
+        scoreText.text = "Score: " + score;
         yourScoreText.text = "Your Score: " + score;
         bestScoreText.text = "Highest Score: " + best;
 
