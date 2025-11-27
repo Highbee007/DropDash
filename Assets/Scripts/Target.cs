@@ -34,7 +34,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         gameManager.AddScore(5);
         Explode();
-        //shake.Shake();
+        shake.Shake();
 
         if (gameObject.CompareTag("Bad"))
         {

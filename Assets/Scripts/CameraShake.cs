@@ -1,28 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+//using com.cyborgAssets.inspectorButtonPro;
+
 
 public class CameraShake : MonoBehaviour
 {
     [Header("Camera to Shake")]
-    public Transform cameraTransform;   // Drag your camera here
+    public Transform cameraTransform;
+    [SerializeField] public Camera mainCam;
 
     [Header("Shake Settings")]
     public float defaultDuration = 0.2f;
     public float defaultMagnitude = 0.05f;
 
     private Vector3 _originalPos;
-    private Coroutine shakeRoutine;
+    private Coroutine _shakeRoutine;
 
     void Awake()
     {
-        cameraTransform = GetComponent<Transform>();
         if (cameraTransform == null)
-            cameraTransform = Camera.main.transform;
+            cameraTransform = mainCam.transform;
 
         _originalPos = cameraTransform.localPosition;
     }
 
+    //[ProButton]
     public void Shake()
     {
         Shake(defaultDuration, defaultMagnitude);
@@ -31,13 +34,13 @@ public class CameraShake : MonoBehaviour
     public void Shake(float duration, float magnitude)
     {
         // If shaking already, stop and reset before starting new shake
-        if (shakeRoutine != null)
+        if (_shakeRoutine != null)
         {
-            StopCoroutine(shakeRoutine);
+            StopCoroutine(_shakeRoutine);
             cameraTransform.localPosition = _originalPos;
         }
 
-        shakeRoutine = StartCoroutine(DoShake(duration, magnitude));
+        _shakeRoutine = StartCoroutine(DoShake(duration, magnitude));
     }
 
     private IEnumerator DoShake(float duration, float magnitude)
@@ -52,7 +55,6 @@ public class CameraShake : MonoBehaviour
         }
 
         cameraTransform.localPosition = _originalPos;
-        shakeRoutine = null;
-
+        _shakeRoutine = null;
     }
 }
