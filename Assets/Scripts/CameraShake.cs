@@ -16,6 +16,7 @@ public class CameraShake : MonoBehaviour
 
     void Awake()
     {
+        cameraTransform = GetComponent<Transform>();
         if (cameraTransform == null)
             cameraTransform = Camera.main.transform;
 
