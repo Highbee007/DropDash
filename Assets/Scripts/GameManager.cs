@@ -89,6 +89,8 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         playAudio.Play();
+        scoreText.gameObject.SetActive(true);
+        livesText.gameObject.SetActive(true);
     }
 
     public void AddScore(int point)

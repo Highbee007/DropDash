@@ -7,6 +7,7 @@ public class Target : MonoBehaviour
     public Rigidbody rb;
     public ParticleSystem targetParticle;
     private GameManager gameManager;
+    private CameraShake shake;
 
     public AudioClip tapSound;
     public AudioClip bombSound;
@@ -20,6 +21,7 @@ public class Target : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        shake = GetComponent<CameraShake>();
 
         rb.drag = 0.7f;
 
@@ -32,6 +34,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         gameManager.AddScore(5);
         Explode();
+        shake.Shake();
 
         if (gameObject.CompareTag("Bad"))
         {
