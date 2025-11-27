@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public Button playAgainButton;
     private AudioSource playAudio;
 
+    public AudioClip buttonTap;
+
     private SpawnManager spawn;
 
     public List<GameObject> foodPrefabs;
@@ -47,16 +49,19 @@ public class GameManager : MonoBehaviour
 
     public void StartFoodMode()
     {
+        playAudio.PlayOneShot(buttonTap, 1.0f);
         spawn.StartMode(foodPrefabs);
     }
 
     public void StartBallMode()
     {
+        playAudio.PlayOneShot(buttonTap, 1.0f);
         spawn.StartMode(ballPrefabs);
     }
 
     public void StartCrateMode()
     {
+        playAudio.PlayOneShot(buttonTap, 1.0f);
         spawn.StartMode(cratePrefabs);
     }
 
