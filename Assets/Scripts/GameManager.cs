@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Refs")]
     //public GameObject gameOver;
     //public GameObject bestText;
     public GameObject gameOverObject;
@@ -15,16 +16,22 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI yourScoreText;
     public Button playAgainButton;
-    private AudioSource playAudio;
-
-    public AudioClip buttonTap;
-
+    public AudioSource playAudio;
+    public CameraShake shake;
     private SpawnManager spawn;
 
+    [Header("AudioManager")]
+    public AudioClip buttonTap;
+    public AudioClip losePoint;
+    public AudioClip tapSound;
+    public AudioClip bombSound;
+
+    [Header("Prefabs")]
     public List<GameObject> foodPrefabs;
     public List<GameObject> ballPrefabs;
     public List<GameObject> cratePrefabs;
 
+    [Header("GameManager")]
     public bool isGameActive;
     public int score;
     private int best;
@@ -135,6 +142,8 @@ public class GameManager : MonoBehaviour
     {
         if (lives < 1 && isGameActive)
         {
+            playAudio.Stop();
+            playAudio.PlayOneShot(losePoint, 1.0f);
             GameOver();
         }
     }

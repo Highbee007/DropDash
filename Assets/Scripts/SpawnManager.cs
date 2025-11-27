@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-
+    [Header("Refs")]
     public GameObject title;
     private GameManager gameManager;
 
+    [Header("Spawns")]
     public float startDelay = 0.8f;
     public float spawnInterval = 2.0f;
     public float minInterval = 0.5f;
     public float difficultyRate = 0.95f;
+    public float minSpawnX = -5f;
+    public float maxSpawnX = -1f;
+    public float spawnY = 13f;
 
     private List<GameObject> currentPrefabs;
 
@@ -53,8 +57,8 @@ public class SpawnManager : MonoBehaviour
         int index = Random.Range(0, currentPrefabs.Count);
 
         Vector3 spawnPos = new Vector3(
-            Random.Range(-5f, -1f),
-            13,
+            Random.Range(minSpawnX, maxSpawnX),
+            spawnY,
             0
         );
 
@@ -63,8 +67,8 @@ public class SpawnManager : MonoBehaviour
         Instantiate(currentPrefabs[index], spawnPos, spawnRot);
     }
 
-    void SpawnRandomSpecial()
-    {
-        int index = Random.Range(0, specialPrefabs.Count);
-    }
+    //void SpawnRandomSpecial()
+    //{
+    //    int index = Random.Range(0, specialPrefabs.Count);
+    //}
 }

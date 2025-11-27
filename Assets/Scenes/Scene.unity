@@ -415,8 +415,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282944675
-  m_fontColor: {r: 0.381132, g: 0.33114943, b: 0.18337482, a: 1}
+    rgba: 4281229696
+  m_fontColor: {r: 0.5019608, g: 0.38039216, b: 0.18039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -667,7 +667,11 @@ MonoBehaviour:
   livesText: {fileID: 291046497}
   yourScoreText: {fileID: 1724765724}
   playAgainButton: {fileID: 1438875237}
+  playAudio: {fileID: 0}
   buttonTap: {fileID: 8300000, guid: 6d91dd98a95d7a84ca77e6690124a1d6, type: 3}
+  losePoint: {fileID: 8300000, guid: fd16e66c6b87f2f42915c217b40ea278, type: 3}
+  tapSound: {fileID: 8300000, guid: ccb9b31174a3a43709a113a9c7cf4252, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
   foodPrefabs:
   - {fileID: 8928336857645753129, guid: dbdffcd8c98d02341b92514469e49493, type: 3}
   - {fileID: 8811674387316837564, guid: de86b168d5c7f9e48a78d487d1710611, type: 3}
@@ -894,8 +898,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281291873
-  m_fontColor: {r: 0.38039216, g: 0.32941177, b: 0.18431373, a: 1}
+    rgba: 4281229696
+  m_fontColor: {r: 0.5019608, g: 0.38039216, b: 0.18039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1701,7 +1705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &859190770
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1793,8 +1797,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282944675
-  m_fontColor: {r: 0.381132, g: 0.33114943, b: 0.18337482, a: 1}
+    rgba: 4281229696
+  m_fontColor: {r: 0.5019608, g: 0.38039216, b: 0.18039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1924,7 +1928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1177708183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2501,8 +2505,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281291873
-  m_fontColor: {r: 0.38039216, g: 0.32941177, b: 0.18431373, a: 1}
+    rgba: 4281229696
+  m_fontColor: {r: 0.5019608, g: 0.38039216, b: 0.18039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
