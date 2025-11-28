@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
+        playAudio.PlayOneShot(buttonTap, 1.0f);
         lives = 5;
         livesText.text = "Lives: " + lives;
 
@@ -85,6 +86,8 @@ public class GameManager : MonoBehaviour
         //bestText.SetActive(false);
         gameOverObject.SetActive(false);
         playAgainButton.gameObject.SetActive(false);
+        livesText.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
 
         isGameActive = false;
 
@@ -101,8 +104,8 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         playAudio.Play();
-        scoreText.gameObject.SetActive(true);
         livesText.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(true);
     }
 
     public void AddScore(int point)

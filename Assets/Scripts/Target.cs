@@ -10,7 +10,7 @@ public class Target : MonoBehaviour
 
 
     public float force = 2f;
-    public float growth = 0.7f;
+    public float drop = 0.7f;
 
 
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Target : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
-        rb.drag = 0.7f;
+        rb.drag = drop;
 
     }
 
@@ -31,7 +31,7 @@ public class Target : MonoBehaviour
         gameManager.AddScore(5);
         gameManager.playAudio.PlayOneShot(gameManager.tapSound, 1.0f);
         Explode();
-        gameManager.shake.Shake();
+        //gameManager.shake.Shake();
 
         if (gameObject.CompareTag("Bad"))
         {
@@ -61,7 +61,7 @@ public class Target : MonoBehaviour
         // Adjusting fall speed
         if (gameManager.isGameActive)
         {
-            force += growth * Time.deltaTime;
+            force += drop * Time.deltaTime;
             rb.AddForce(Vector3.down * force, ForceMode.Acceleration);
         }
 
