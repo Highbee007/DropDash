@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7159194316300451813}
   - component: {fileID: 4977260319834362106}
   - component: {fileID: -1619039457463796576}
-  - component: {fileID: -4747730151104014573}
   - component: {fileID: -1711377127706305596}
+  - component: {fileID: 2636570544452429394}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -113,24 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4747730151104014573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8928336857645753129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  targetParticle: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
-  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
-  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  force: 2
-  growth: 0.7
 --- !u!65 &-1711377127706305596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,3 +134,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.32699966, y: 0.32699984, z: 0.32700062}
   m_Center: {x: -0.0000019073486, y: 0.16349992, z: 0}
+--- !u!114 &2636570544452429394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928336857645753129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32f410e5aadb55429ea93501ccf2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: -1619039457463796576}
+  targetParticle: {fileID: 7303472089845130122, guid: 6cbc21f5e9162483993a2b84b14d5ac8, type: 3}
+  gameManager: {fileID: 0}
+  shake: {fileID: 0}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  scoreIncrease: 5
+  scoreDecrease: -15
+  force: 2
+  growth: 0.7
+  timeBonus: 5
+  goldBonus: 10
+  spawnWeight: 1

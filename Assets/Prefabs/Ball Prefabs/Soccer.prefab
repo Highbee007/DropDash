@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3683835920950748353}
   - component: {fileID: 83491374680293333}
   - component: {fileID: 6387201535200790105}
-  - component: {fileID: 6411364873753446350}
   - component: {fileID: -7840836622989502301}
+  - component: {fileID: 4276008650620341878}
   m_Layer: 0
   m_Name: Soccer
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.41, y: 6.15, z: 1}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,24 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6411364873753446350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4473467464209226545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6387201535200790105}
-  targetParticle: {fileID: 7535607469619513247, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
-  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
-  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  force: 2
-  growth: 0.7
 --- !u!135 &-7840836622989502301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -152,3 +134,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.15480329
   m_Center: {x: 0, y: 0.14754717, z: 0}
+--- !u!114 &4276008650620341878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473467464209226545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32f410e5aadb55429ea93501ccf2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6387201535200790105}
+  targetParticle: {fileID: 7535607469619513247, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
+  gameManager: {fileID: 0}
+  shake: {fileID: 0}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  scoreIncrease: 5
+  scoreDecrease: -15
+  force: 2
+  growth: 0.7
+  timeBonus: 5
+  goldBonus: 10
+  spawnWeight: 1

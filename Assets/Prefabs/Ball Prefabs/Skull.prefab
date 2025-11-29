@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8963066276334509804}
   - component: {fileID: 3791178077848380220}
   - component: {fileID: 8631726340982782388}
-  - component: {fileID: 7491787254412492654}
   - component: {fileID: -2207335850627387069}
   - component: {fileID: -644676538502706964}
+  - component: {fileID: 8744027896282603795}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Bad
@@ -86,24 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7491787254412492654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4857582085496828238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: -2207335850627387069}
-  targetParticle: {fileID: 19821056, guid: 079954accd64b32419ec069129c81273, type: 3}
-  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
-  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  force: 2
-  growth: 0.7
 --- !u!54 &-2207335850627387069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,3 +134,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.42912176, y: 0.5520757, z: 0.46483076}
   m_Center: {x: 0, y: -0.02673658, z: -0.023982435}
+--- !u!114 &8744027896282603795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857582085496828238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32f410e5aadb55429ea93501ccf2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: -2207335850627387069}
+  targetParticle: {fileID: 19821056, guid: 079954accd64b32419ec069129c81273, type: 3}
+  gameManager: {fileID: 0}
+  shake: {fileID: 0}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  scoreIncrease: 5
+  scoreDecrease: -15
+  force: 2
+  growth: 0.7
+  timeBonus: 5
+  goldBonus: 10
+  spawnWeight: 1

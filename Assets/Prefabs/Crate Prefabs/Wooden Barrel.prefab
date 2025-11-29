@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7713214297520555288}
   - component: {fileID: 6764362780598711230}
   - component: {fileID: 7890272908586368095}
-  - component: {fileID: 1953572240123552341}
   - component: {fileID: 1574577311662686953}
+  - component: {fileID: 5854787393990187174}
   m_Layer: 0
   m_Name: Wooden Barrel
   m_TagString: Untagged
@@ -113,24 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1953572240123552341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4182775780232201131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff64e0b9d44a7f4abbe3d19df7c7522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  targetParticle: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3, type: 3}
-  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
-  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
-  force: 2
-  growth: 0.7
 --- !u!65 &1574577311662686953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,3 +134,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.77724975, y: 0.9368583, z: 0.7772498}
   m_Center: {x: 0, y: 0, z: 0.000000029802322}
+--- !u!114 &5854787393990187174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4182775780232201131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32f410e5aadb55429ea93501ccf2d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7890272908586368095}
+  targetParticle: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3, type: 3}
+  gameManager: {fileID: 0}
+  shake: {fileID: 0}
+  tapSound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
+  bombSound: {fileID: 8300000, guid: 774ebc5c074ce4695b7cc310fbd44087, type: 3}
+  scoreIncrease: 5
+  scoreDecrease: -15
+  force: 2
+  growth: 0.7
+  timeBonus: 5
+  goldBonus: 10
+  spawnWeight: 1
