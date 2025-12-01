@@ -267,12 +267,12 @@ public class GameManagerX : MonoBehaviour
             _bestScore = score;
             PlayerPrefs.SetInt("HighestScore", _bestScore);
             bestScoreText.text = "Highest Score: " + _bestScore;
-            scoreText.text = "Score: " + score + " - NEW RECORD"; // I hope this is the right one
+            yourScoreText.text = "Score: " + score + " - NEW RECORD"; // I hope this is the right one
         }
         else
-            scoreText.text = "Score: " + score;
+            yourScoreText.text = "Your Score: " + score;
 
-        yourScoreText.text = "Your Score: " + score;
+        scoreText.text = "Score: " + score;
     }
 
     public void ReduceLives(int life)
