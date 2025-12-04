@@ -1109,6 +1109,7 @@ MonoBehaviour:
   livesText: {fileID: 291046497}
   yourScoreText: {fileID: 1724765724}
   timerText: {fileID: 1613186778}
+  muteText: {fileID: 1418088763}
   timerUI: {fileID: 1613186776}
   playAgainButton: {fileID: 1438875235}
   returnToMenuButton: {fileID: 1965105126}

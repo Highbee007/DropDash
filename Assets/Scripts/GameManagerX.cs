@@ -21,6 +21,7 @@ public class GameManagerX : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI yourScoreText;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI muteText;
     public GameObject timerUI;
     public GameObject playAgainButton;
     public GameObject returnToMenuButton; // add a new button for going back
@@ -70,6 +71,7 @@ public class GameManagerX : MonoBehaviour
         bestScoreText.text = "Highest Score: " + _bestScore;
         scoreText.text = "Score: " + score;
         yourScoreText.text = "Your Score: " + score;
+        muteText.text = "Mute";
 
         timerUI.SetActive(false);
         returnToMenuButton.SetActive(false);
