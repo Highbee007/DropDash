@@ -237,6 +237,8 @@ public class GameManagerX : MonoBehaviour
         isMuted = !isMuted;
         musicAudio.mute = isMuted;
 
+        if (isMuted)
+            muteText.text = "Unmute";
         //TODO: add button for this
     }
 
